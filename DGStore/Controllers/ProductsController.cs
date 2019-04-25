@@ -24,6 +24,9 @@ namespace DGStore.Controllers
             var list = _context.Products.ToList();
             return View(list);
         }
-
+        public IActionResult Details(int Id)
+        {
+            return View();
+        }
     }
 }
