@@ -9,6 +9,12 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+@if (Model.Any())
+{
+    <div>هیچ محصولی در فروشگاه ثبت نشده است</div>
+}
+else
+{
 <table class="table">
     <thead>
         <tr>
@@ -20,29 +26,33 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var product in Model) {
-        <tr>
-            <td>@product.Title</td>
-            <td>
-                @if (product.IsExists)
-                 {
-                     <text>بلی</text>
-                 }
-                 else
-                 {
-                     <text>خیر</text>
-                 }
-            </td>
-            <td>@product.NumberInStock</td>
-            <td>@product.Price</td>
-            <td>@product.Specification</td>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Title</td>
+                <td>
+                    @if (product.IsExists)
+                    {
+                        <text>بلی</text>
+                    }
+                    else
+                    {
+                        <text>خیر</text>
+                    }
+                </td>
+                <td>@product.NumberInStock</td>
+                <td>@product.Price</td>
+                <td>@product.Specification</td>
 
-            <td>
-                <a asp-action="Edit" asp-route-id="@product.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@product.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@product.Id">Delete</a>
-            </td>
-        </tr>
-}
+                <td>
+                    <a asp-action="Edit" asp-route-id="@product.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@product.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+}
+
+
