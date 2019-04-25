@@ -1,0 +1,51 @@
+﻿@model DGStore.Models.Product
+
+@{
+    ViewData["Title"] = "حذف محصول";
+}
+
+<h2>حذف</h2>
+
+<h3>آیا از حذف این محصول اطمینان دارید؟</h3>
+<div>
+    <h4>محصول</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            عنوان
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+           موجودی
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumberInStock)
+        </dd>
+        <dt>
+            موجود
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsExists)
+        </dd>
+        <dt>
+            جزییات
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Specification)
+        </dd>
+        <dt>
+            قیمت
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="حذف" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-primary">بازگشت به لیست</a>
+    </form>
+</div>
