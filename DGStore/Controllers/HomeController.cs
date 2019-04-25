@@ -29,6 +29,16 @@ namespace DGStore.Controllers
             return View();
         }
 
+        public IActionResult ContactProcess()
+        {
+            var name = Request.Query["name"].ToString();
+            var subject = Request.Query["subject"].ToString();
+            var email = Request.Query["email"].ToString();
+            var body = Request.Query["body"].ToString();
+            return View();
+        }
+
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
