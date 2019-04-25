@@ -4,12 +4,12 @@
     ViewData["Title"] = "نمایش محصولات";
 }
 
-<h2>Index</h2>
+<h2>محصولات</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">افزودن محصول</a>
 </p>
-@if (Model.Any())
+@if (!Model.Any())
 {
     <div>هیچ محصولی در فروشگاه ثبت نشده است</div>
 }
@@ -45,9 +45,9 @@ else
                 <td>@product.Specification</td>
 
                 <td>
-                    <a asp-action="Edit" asp-route-id="@product.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@product.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@product.Id">ویرایش</a> |
+                    <a asp-action="Details" asp-route-id="@product.Id">جزییات</a> |
+                    <a asp-action="Delete" asp-route-id="@product.Id">حذف</a>
                 </td>
             </tr>
         }

@@ -4,47 +4,49 @@
     ViewData["Title"] = "نمایش محصول";
 }
 
-<h2>Details</h2>
+<h2>جزییات</h2>
 
 <div>
-    <h4>Product</h4>
+    <h4>محصول</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        <dt>عنوان</dt>
+        <dd>
             @Model.Title
-        </dt>
-        <dt>
+        </dd>
+        <dt>موجود</dt>
+        <dd>
             @if (Model.IsExists)
-             {
-                <text>بلی</text>
-             }
-             else
-             {
-                <text>خیر</text>
-             }
-        </dt>
+        {
+            <text>بلی</text>
+    }
+    else
+    {
+        <text>خیر</text>
+}
+        </dd>
         <dt>
+            تعداد موجودی
+        </dt>
+        <dd>
             @Model.NumberInStock
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.NumberInStock)
         </dd>
         <dt>
+            قیمت
+        </dt>
+        <dd>
             @Model.Price
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Price)
         </dd>
         <dt>
-            @Model.Specification
+            مشخصات
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Specification)
+            @Model.Specification)
         </dd>
 
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">ویرایش</a> |
+    <a asp-action="Index" class="btn btn-primary">بازگشت به لیست</a>
 </div>
