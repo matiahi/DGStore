@@ -3,7 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - DGStore</title>
+    <meta name="keywords" content="فیلم,سریال,دانلود,انیمیشن,کارتون" />
+    <title>@ViewData["Title"] - دیجی استور</title>
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico">
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <meta property="og:title" content="دیجی مووی" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://digimovie.emoh.ir" />
+    <meta property="og:image" content="http://digimovie.emoh.ir/images/Template/logo.png" />
+    <meta property="og:description" content="وب سایت دیجی مووی برترین وب سایت در زمینه فیلم و سریال" />
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -20,21 +28,45 @@
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header navbar-right">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">DGStore</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                    <i class="fas fa-store align-middle text-info"></i>
+                    دیجی استور
+                </a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Contact">
+                            <i class="fas fa-phone align-middle"></i>
+                            تماس با ما
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="About">
+                            <i class="fas fa-file-signature align-middle"></i>
+                            درباره ما
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Products" asp-action="Index">
+                            <i class="fas fa-box-open align-middle"></i>
+                            محصولات
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="fa fa-home align-middle"></i>
+                            خانه
+                        </a>
+                    </li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
@@ -43,14 +75,22 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2019 - DGStore</p>
-        </footer>
+        <footer class="text-center">
+            <h3 class="text-center">
+                <a href="#" target="_blank" class="text-info"><i class="fab fa-telegram" title="تلگرام "></i></a>&nbsp;&nbsp;
+                <a href="#" target="_blank" class="text-warning"><i class="fab fa-instagram" title="اینستاگرام "></i></a>&nbsp;&nbsp;
+                <a href="#" target="_blank" class="text-success"><i class="fab fa-twitter" title="توییتر "></i></a>&nbsp;&nbsp;
+                <a href="#" target="_blank" class="text-primary"><i class="fab fa-facebook" title="فیسبوک "></i></a>&nbsp;&nbsp;
+                <a href="#" target="_blank" title="ایمیل " class="text-danger"><i class="far fa-envelope"></i></a>&nbsp;&nbsp;
+            </h3>
+                <p>&copy; 2019 - دیجی استور</p>
+            </footer>
     </div>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/font-awesome/all.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
@@ -66,9 +106,9 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
+        <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
     @RenderSection("Scripts", required: false)
 </body>
 </html>
