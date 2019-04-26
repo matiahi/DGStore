@@ -4,6 +4,10 @@
     ViewData["Title"] = "نمایش محصولات";
 }
 
+@section Head{
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+}
+
 <h2>محصولات</h2>
 
 <p>
@@ -15,44 +19,117 @@
 }
 else
 {
-<table class="table">
-    <thead>
-        <tr>
-            <th>عنوان </th>
-            <th>موجود </th>
-            <th>تعداد موجودی </th>
-            <th>قیمت </th>
-            <th>مشخصات </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var product in Model)
-        {
+    <table class="table">
+        <thead>
             <tr>
-                <td>@product.Title</td>
-                <td>
-                    @if (product.IsExists)
-                    {
-                        <text>بلی</text>
-                    }
-                    else
-                    {
-                        <text>خیر</text>
-                    }
-                </td>
-                <td>@product.NumberInStock</td>
-                <td>@product.Price</td>
-                <td>@product.Specification</td>
-
-                <td>
-                    <a asp-action="Edit" asp-route-id="@product.Id">ویرایش</a> |
-                    <a asp-action="Details" asp-route-id="@product.Id">جزییات</a> |
-                    <a asp-action="Delete" asp-route-id="@product.Id">حذف</a>
-                </td>
+                <th>عنوان </th>
+                <th>موجود </th>
+                <th>تعداد موجودی </th>
+                <th>قیمت </th>
+                <th>مشخصات </th>
             </tr>
-        }
-    </tbody>
-</table>
-}
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Title</td>
+                    <td>
+                        @if (product.IsExists)
+                        {
+                            <text>بلی</text>
+                        }
+                        else
+                        {
+                            <text>خیر</text>
+                        }
+                    </td>
+                    <td>@product.NumberInStock</td>
+                    <td>@product.Price</td>
+                    <td>@product.Specification</td>
 
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@product.Id" class="nav-link text-warning">ویرایش</a> |
+                        <a asp-action="Details" asp-route-id="@product.Id" class="nav-link text-primary">جزییات</a> |
+                        <a asp-action="Delete" asp-route-id="@product.Id" class="nav-link text-danger">حذف</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@section Scripts{
+    <script>
+$(document).ready(function () {
+            $('#search').on({
+                'keyup': function (e) {
+                    //check for minimum required length for search goes here
+                    $.ajax({
+                        method: 'get',
+                        url: '/Products/Search',
+                        data: { q: $(this).val() },
+                        success: function (d) {
+                            $('.search-bar #suggest').css('display', 'block').empty();
+                            var suggestElement = $('.search-bar #suggest');
+                            for (var i in d) {
+                                suggestElement
+                                    .append('<div class="suggest-item"><a href="/Products/Details/' + d[i].id + '">' + d[i].title + '</a></div>');
+                            }
+                        }
+                    });
+                }
+                , 'focusout': function () {
+                    $('.search-bar #suggest').slideUp(function () {
+                        $(this).empty();
+                    });
+                }
+            });
+        });</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script>
+toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-left",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "10000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };</script>
+    @if (TempData["ProductDeleteStatus"] != null)
+    {
+        @if ((bool)TempData["ProductDeleteStatus"] == true)
+        {
+            <script>toastr["success"]("حذف محصول مورد نظر با موفقیت انجام گردید.", "دیجی مووی");</script>}
+        else
+        {
+            <script>toastr["error"]("حذف محصول مورد نظر انجام نگردید، لطفاً مجدداً تلاش نمایید.", "دیجی مووی");</script>}
+    }
+    @if (TempData["ProductCreateStatus"] != null)
+    {
+        @if ((bool)TempData["ProductCreateStatus"] == true)
+        {
+            <script>toastr["success"]("افزودن محصول مورد نظر با موفقیت انجام گردید.", "دیجی مووی");</script>}
+        else
+        {
+            <script>toastr["error"]("افزودن محصول مورد نظر انجام نگردید، لطفاً مجدداً تلاش نمایید.", "دیجی مووی");</script>}
+    }
+    @if (TempData["ProductEditStatus"] != null)
+    {
+        @if ((bool)TempData["ProductEditStatus"] == true)
+        {
+            <script>toastr["success"]("ویرایش محصول مورد نظر با موفقیت انجام گردید.", "دیجی مووی");</script>}
+        else
+        {
+            <script>toastr["error"]("ویرایش محصول مورد نظر انجام نگردید، لطفاً مجدداً تلاش نمایید.", "دیجی مووی");</script>}
+    }
+}
 

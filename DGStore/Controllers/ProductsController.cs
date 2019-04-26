@@ -48,5 +48,15 @@ namespace DGStore.Controllers
 
             return View(product);
         }
+        [HttpPost]
+        public IActionResult DeleteDone(int? Id)
+        {
+            var product = _context.Products.FirstOrDefault(p => p.Id == Id);
+            
+            _context.Products.Remove(product);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }
