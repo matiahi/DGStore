@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DGStore.Data;
+using DGStore.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DGStore.Controllers
@@ -49,14 +50,29 @@ namespace DGStore.Controllers
             return View(product);
         }
         [HttpPost]
-        public IActionResult DeleteDone(int? Id)
+        public IActionResult DeleteDone(int Id)
         {
             var product = _context.Products.FirstOrDefault(p => p.Id == Id);
             
-            _context.Products.Remove(product);
+            _context.Remove(product);
             _context.SaveChanges();
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Create()
+        {
+            
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Product product)
+        {
+            _context.Add(product);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
