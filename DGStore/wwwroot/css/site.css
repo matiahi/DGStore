@@ -1,4 +1,10 @@
-﻿body {
+﻿@font-face {
+    font-family: 'BZar';
+    src: url('fonts/BZar.eot');
+    src: local('☺'), url('fonts/BZar.ttf') format('truetype'), url('fonts/BZar.woff') format('woff');
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
     direction: rtl;
