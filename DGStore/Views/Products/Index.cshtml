@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 }
 
-<h2>محصولات</h2>
+<h2 class="text-right">@ViewData["Title"] </h2>
 
 <p>
-    <a asp-action="Create" class="btn btn-success">افزودن محصول</a>
+    <a asp-action="Create" class="btn btn-success">افزودن محصول جدید</a>
 </p>
 @if (!Model.Any())
 {
@@ -60,7 +60,7 @@ else
 }
 @section Scripts{
     <script>
-$(document).ready(function () {
+        $(document).ready(function () {
             $('#search').on({
                 'keyup': function (e) {
                     //check for minimum required length for search goes here
@@ -87,7 +87,7 @@ $(document).ready(function () {
         });</script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script>
-toastr.options = {
+        toastr.options = {
             "closeButton": true,
             "debug": false,
             "newestOnTop": false,

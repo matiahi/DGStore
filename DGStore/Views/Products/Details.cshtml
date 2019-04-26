@@ -1,51 +1,52 @@
 ﻿@model DGStore.Models.Product
 
 @{
-    ViewData["Title"] = "نمایش محصول";
+    ViewData["Title"] = "نمایش جزییات محصول";
 }
 
-<h2>جزییات</h2>
+<h2 class="text-right">@ViewData["Title"] </h2>
+<hr />
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                <label asp-for="Title" class="control-label">عنوان محصول:</label>
+            </td>
+            <td>@Html.DisplayFor(model => model.Title)</td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="IsExists" class="control-label">کالا موجود است :</label>
+            </td>
+            <td>
+                @if (Model.IsExists)
+                {
+                    <text>بلی</text>
+                }
+                else
+                {
+                    <text>خیر</text>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="NumberInStock" class="control-label">تعداد موجودی:</label>
+            </td>
+            <td>@Html.DisplayFor(model => model.NumberInStock)</td>
+        </tr>
+        <tr>
+            <td> <label asp-for="Price" class="control-label">قیمت:</label> </td>
 
-<div>
-    <h4>محصول</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>عنوان</dt>
-        <dd>
-            @Model.Title
-        </dd>
-        <dt>موجود</dt>
-        <dd>
-            @if (Model.IsExists)
-        {
-            <text>بلی</text>
-    }
-    else
-    {
-        <text>خیر</text>
-}
-        </dd>
-        <dt>
-            تعداد موجودی
-        </dt>
-        <dd>
-            @Model.NumberInStock
-        </dd>
-        <dt>
-            قیمت
-        </dt>
-        <dd>
-            @Model.Price
-        </dd>
-        <dt>
-            مشخصات
-        </dt>
-        <dd>
-            @Model.Specification)
-        </dd>
+            <td>@Html.DisplayFor(model => model.Price) </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Specification" class="control-label">توضیحات:</label></td>
+            <td> @Html.DisplayFor(model => model.Specification)</td>
+        </tr>
+    </tbody>
+</table>
 
-    </dl>
-</div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">ویرایش</a> |
     <a asp-action="Index" class="btn btn-primary">بازگشت به لیست</a>
