@@ -1,106 +1,156 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<br />
 
-@*<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
+<div class="container row">
+    <div class="card col-md-4" id="picture">
+        <div class="card-header">
+            <img id="IMG" src="~/images/images/1.jpg" class="rounded">
         </div>
-        <div class="item">
-            <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
+        <div class="card-body">
+            <h4><a href="#">Alpha</a></h4>
+            <p class="card-text text-justify">
+                "آلفا" فیلمی به کارگردانی آلبرت هیوز، فیلمساز آمریکایی است و شاید از آن دست فیلم هایی که نمونه شان کمتر در سینمای جهان ساخته شده باشد.
+                فیلم، به دوران عصر یخی باز می گردد و تلاش مرد جوانی برای زنده ماندن در شرایطی خطرناک و در این بحران، تنها یک نفر در کنار اوست، یک گرگ که نامش را "آلفا" می گذارد.
+            </p>
         </div>
-        <div class="item">
-            <img src="~/images/banner3.svg" alt="Package Management" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Bring in libraries from NuGet and npm, and automate tasks using Grunt or Gulp.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-info btn-block">ادامه مطلب</button>
         </div>
     </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+    <div class="card col-md-4" id="picture">
+        <div class="card-header">
+            <img id="IMG" src="~/images/images/2.jpg" class="rounded">
+        </div>
+        <div class="card-body">
+            <h4><a href="#">Green Book</a></h4>
+            <p class="card-text text-justify">
+                داستان در مورد یک بانسر ایتالیایی- آمریکایی به نام تونی لیپ (ویگو مورتنسن) است که برای پول حاضر است هر کاری بکند، از دزدیدن کلاه ثروتمندان گرفته تا شرکت در مسابقه‌ی هات‌داگ‌خوری. تونی، توسط یک پیانیست سیاه‌پوست به اسم دان شرلی (ماهرشالا علی) استخدام می‌شود تا راننده و بادیگارد شخصی‌اش در تور کنسرت‌های جنوب آمریکا باشد. 
+                @*<li class="card-text text-justify">برنده سه جایزه اسکار در رشته‌های بهترین فیلم، بهترین فیلم‌نامه غیراقتباسی و بهترین بازیگر نقش مکمل مرد شد.</li>*@
+            </p>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-info btn-block">ادامه مطلب</button>
+        </div>
+    </div>
+    <div class="card col-md-4"  id="picture">
+        <div class="card-header">
+            <img id="IMG" src="~/images/images/3.jpg" class="rounded">
+        </div>
+        <div class="card-body">
+            <h4><a href="#">The Interstellar</a></h4>
+            <p class="card-text text-justify">
+                در آینده زمین به علت آتشک (باد زدگی) محصولات کشاورزی رو به نابودی است و هر روز محصولات بیشتری نابود می‌شود. کوپر (متیو مک ‌کانهی) خلبان سابق ناسا که حالا کشاورز شده به همراه پدر زن، پسر جوان و دختر ۱۰ ساله‌اش در یک مزرعه زندگی می‌کنند. مورفی (دختر کوپر) معتقد است که در اتاقش یک شبح وجود دارد که سعی دارد با او ارتباط برقرار کند. 
+                @*<li>. کوپر و مورفی کشف می‌کنند شبح یک هوش ناشناخته است که با ارسال پیام با استفاده از امواج گرانشی مختصات دستگاه اعداد دودویی در گرد و غبار به جا می‌گذارد که این مختصات آن‌ها را به تأسیسات مخفی ناسا که توسط پروفسور جان برند (مایکل کین) رهبری می‌شود، راهنمایی می‌کند</li>*@
+                @*<li class="card-text text-justify">برنده اسکار بهترین جلوه های ویژه</li>*@
+            </p>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-info btn-block">ادامه مطلب</button>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-3">
-        <h2>Application uses</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core MVC</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>How to</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Overview</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518008">Conceptual overview of what is ASP.NET Core</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699320">Fundamentals of ASP.NET Core such as Startup and middleware.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398602">Working with Data</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398603">Security</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699321">Client side development</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699322">Develop on different platforms</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699323">Read more on the documentation site</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Run &amp; Deploy</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
-        </ul>
-    </div>
-</div>*@
+    @*<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            Learn how to build ASP.NET apps that can run anywhere.
+                            <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
+                                Learn More
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            There are powerful new features in Visual Studio for building modern web apps.
+                            <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
+                                Learn More
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/images/banner3.svg" alt="Package Management" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            Bring in libraries from NuGet and npm, and automate tasks using Grunt or Gulp.
+                            <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
+                                Learn More
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
+                            <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
+                                Learn More
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <h2>Application uses</h2>
+                <ul>
+                    <li>Sample pages using ASP.NET Core MVC</li>
+                    <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h2>How to</h2>
+                <ul>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h2>Overview</h2>
+                <ul>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkId=518008">Conceptual overview of what is ASP.NET Core</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkId=699320">Fundamentals of ASP.NET Core such as Startup and middleware.</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkId=398602">Working with Data</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkId=398603">Security</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkID=699321">Client side development</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkID=699322">Develop on different platforms</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkID=699323">Read more on the documentation site</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h2>Run &amp; Deploy</h2>
+                <ul>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
+                </ul>
+            </div>
+        </div>*@
