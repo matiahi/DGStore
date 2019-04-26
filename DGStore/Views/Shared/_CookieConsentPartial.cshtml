@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+@if (showBanner)
+{
+    <nav id="cookieConsent" class="navbar navbar-dark bg-dark fixed-bottom">
+        <p class="navbar-text">
+            این سایت برای ذخیره اطلاعات شما از کوکی ها استفاده می کند.
+        </p>
+        <div class="navbar-right">
+            <a asp-controller="Home" asp-action="Privacy" class="btn btn-info btn-sm">
+                <i class="fab fa-readme align-middle"></i> بیشتر بدانید
+            </a>
+            <button type="button" class="btn btn-success btn-sm" data-cookie-string="@cookieString">
+                <i class="fas fa-check align-middle"></i> می پذیرم
+            </button>
+        </div>
+    </nav>
+
+
+
+
+
+    <script>(function () {
+            document.querySelector("#cookieConsent button[data-cookie-string]").addEventListener("click", function (el) {
+                document.cookie = el.target.dataset.cookieString;
+                document.querySelector("#cookieConsent").style.display = "none";
+            }, false);
+        })();</script>
+}
