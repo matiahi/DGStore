@@ -1,38 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = "تماس با ما";
 }
 <h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
-
+@*<h3>@ViewData["Message"]</h3>*@
+<hr />
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
+
+    تهران, خیابان ولیعصر<br />
+    <abbr title="Phone">تلفن:</abbr>
+    889882801
 </address>
 
 <address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    <strong>پشتیبانی:</strong> <a href="mailto:Support@mhdn.com">Support@mhdn.com</a><br />
+    <strong>فروش:</strong> <a href="mailto:Marketing@mhdn.com">Marketing@mhdn.com</a>
 </address>
 
-<form asp-action="ContactProcess" method="get">
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" name="name" />
+<div class="row">
+    <div class="col-md-4 nona">
+        <form asp-action="ContactProcess" method="get">
+            <div class="form-group">
+                <label for="name">نام و نام خانوادگی</label>
+                <input type="text" class="form-control" id="name" name="name" />
+            </div>
+            <div class="form-group">
+                <label for="subject">موضوع:</label>
+                <input type="text" class="form-control" id="subject" name="subject" />
+            </div>
+            <div class="form-group">
+                <label for="Email">آدرس ایمیل :</label>
+                <input type="Email" class="form-control" id="email" name="email" />
+            </div>
+            <div class="form-group">
+                <label for="body">توضیحات :</label>
+                <textarea class="form-control" id="body" name="body"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-info">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                ارسال پیام
+            </button>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="subject">Subject:</label>
-        <input type="text" class="form-control" id="subject" name="subject"/>
-    </div>
-    <div class="form-group">
-        <label for="Email">Email address:</label>
-        <input type="Email" class="form-control" id="email" name="email" />
-    </div>
-    <div class="form-group">
-        <label for="body">Description:</label>
-        <textarea class="form-control" id="body" name="body" ></textarea>
     </div>
     
-    <button type="submit" class="btn btn-default">submit</button>
-</form>
+
