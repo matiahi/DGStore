@@ -3,6 +3,9 @@
     src: url('fonts/BZar.eot');
     src: local('☺'), url('fonts/BZar.ttf') format('truetype'), url('fonts/BZar.woff') format('woff');
 }
+.nona {
+    margin-left: 60%;
+}
 
 body {
     padding-top: 50px;
