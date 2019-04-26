@@ -73,6 +73,38 @@ namespace DGStore.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var product = _context.Products.FirstOrDefault(p => p.Id == id);
+            if (product == null)
+                return NotFound();
+
+            return View(product);
+        }
+        [HttpPost]
+        public IActionResult Edit(int id, Product product)
+        {
+            if (id != product.Id)
+                return NotFound();
+
+            try
+            {
+                _context.Update(product);
+                _context.SaveChanges();
+                //Edit Successful
+                TempData["ProductEditStatus"] = true;
+            }
+            catch (Exception e)
+            {
+                //Edit Failed
+                TempData["ProductEditStatus"] = false;
+            }
+
+            return RedirectToAction("Index");
+        }
 
     }
 }

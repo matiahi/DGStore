@@ -1,0 +1,57 @@
+﻿@model DGStore.Models.Product
+
+@{
+    ViewData["Title"] = "ویرایش محصول";
+}
+
+<h2 class="text-right">@ViewData["Title"] </h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4 nona">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">عنوان محصول:</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberInStock" class="control-label">تعداد موجودی:</label>
+                <input asp-for="NumberInStock" class="form-control" />
+                <span asp-validation-for="NumberInStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        کالا موجود است :
+                    </label>
+                    <input asp-for="IsExists" value="True" /> @*@Html.DisplayNameFor(model => model.IsExists)*@
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Specification" class="control-label">توضیحات:</label>
+                <input asp-for="Specification" class="form-control" />
+                <span asp-validation-for="Specification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">قیمت:</label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-warning">
+                    <i class="fas fa-edit align-middle"></i>
+                    ویرایش محصول
+                </button>
+                <a asp-action="Index" class="btn btn-primary">
+                    <i class="fas fa-share align-middle"></i>
+                    بازگشت به لیست
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
