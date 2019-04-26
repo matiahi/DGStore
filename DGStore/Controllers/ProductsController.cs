@@ -97,7 +97,7 @@ namespace DGStore.Controllers
                 //Edit Successful
                 TempData["ProductEditStatus"] = true;
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 //Edit Failed
                 TempData["ProductEditStatus"] = false;
