@@ -53,10 +53,19 @@ namespace DGStore.Controllers
         public IActionResult DeleteDone(int Id)
         {
             var product = _context.Products.FirstOrDefault(p => p.Id == Id);
+            try
+            {
+                _context.Remove(product);
+                _context.SaveChanges();
+                //Delete Successful
+                TempData["ProductDeleteStatus"] = true;
+            }
+            catch (Exception )
+            {
+                //Delete Failed
+                TempData["ProductDeleteStatus"] = false;
+            }
             
-            _context.Remove(product);
-            _context.SaveChanges();
-
             return RedirectToAction("Index");
         }
 
@@ -68,8 +77,19 @@ namespace DGStore.Controllers
         [HttpPost]
         public IActionResult Create(Product product)
         {
-            _context.Add(product);
-            _context.SaveChanges();
+            try
+            {
+                _context.Add(product);
+                _context.SaveChanges();
+                //Create Successful
+                TempData["ProductCreateStatus"] = true;
+            }
+            catch (Exception )
+            {
+                //Create Failed
+                TempData["ProductCreateStatus"] = false;
+            }
+           
 
             return RedirectToAction("Index");
         }
@@ -105,6 +125,13 @@ namespace DGStore.Controllers
 
             return RedirectToAction("Index");
         }
-
+        public IEnumerable<Product> Search(string q)
+        {
+            return _context
+                .Products
+                .Where(p => p.Title.Contains(q))
+                .Take(10)//Maximun records goes here
+                .ToList();
+        }
     }
 }
