@@ -3,9 +3,10 @@
     src: url('fonts/BZar.eot');
     src: local('☺'), url('fonts/BZar.ttf') format('truetype'), url('fonts/BZar.woff') format('woff');
 }
-.nona {
+
+/*.nona {
     margin-left: 60%;
-}
+}*/
 
 body {
     padding-top: 50px;
@@ -20,10 +21,43 @@ nav {
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
+}*/
+
+/*Search Textbox*/
+.search-bar {
+    position: relative;
 }
+
+    .search-bar #suggest {
+        width: 100%;
+        background-color: #d2fff9;
+        position: absolute;
+        top: 100%;
+        border-radius: .25rem;
+        border: 1px solid #0f1481;
+        margin-top: .1rem;
+        display: none;
+    }
+
+    .search-bar .suggest-item {
+        text-align: right;
+        background-color: #eee;
+        padding: .5rem;
+        margin: .1rem;
+        /*border-bottom: 1px solid;*/
+    }
+
+        .search-bar .suggest-item:hover {
+            background-color: #00ffff;
+        }
+
+        .search-bar .suggest-item a {
+            text-decoration: none;
+            display: block;
+        }
 
 /* Carousel */
 .carousel-caption p {
@@ -48,3 +82,5 @@ nav {
         display: none;
     }
 }
+
+
