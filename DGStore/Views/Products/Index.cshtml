@@ -94,50 +94,50 @@ else
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script>
-        toastr.options = {
-            "closeButton": true,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": true,
-            "positionClass": "toast-top-left",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "10000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        };
+		toastr.options = {
+			"closeButton": true,
+			"debug": false,
+			"newestOnTop": false,
+			"progressBar": false,
+			"positionClass": "toast-bottom-left",
+			"preventDuplicates": false,
+			"onclick": null,
+			"showDuration": "300",
+			"hideDuration": "1000",
+			"timeOut": "5000",
+			"extendedTimeOut": "1000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+			"showMethod": "fadeIn",
+			"hideMethod": "fadeOut"
+		}
     </script>
     @if (TempData["ProductDeleteStatus"] != null)
     {
         @if ((bool)TempData["ProductDeleteStatus"] == true)
         {
-            <script>toastr["success"]("حذف محصول مورد نظر با موفقیت انجام گردید.", "دیجی مووی");</script>}
+            <script>toastr["info"]("حذف محصول مورد نظر با موفقیت انجام گردید.", "دیجی استور");</script>}
         else
         {
-            <script>toastr["error"]("حذف محصول مورد نظر انجام نگردید، لطفاً مجدداً تلاش نمایید.", "دیجی مووی");</script>}
+            <script>toastr["error"]("حذف محصول مورد نظر انجام نگردید، لطفاً مجدداً تلاش نمایید.", "دیجی استور");</script>}
     }
     @if (TempData["ProductCreateStatus"] != null)
     {
         @if ((bool)TempData["ProductCreateStatus"] == true)
         {
-            <script>toastr["success"]("افزودن محصول مورد نظر با موفقیت انجام گردید.", "دیجی مووی");</script>}
+            <script>toastr["info"]("افزودن محصول مورد نظر با موفقیت انجام گردید.", "دیجی استور");</script>}
         else
         {
-            <script>toastr["error"]("افزودن محصول مورد نظر انجام نگردید، لطفاً مجدداً تلاش نمایید.", "دیجی مووی");</script>}
+            <script>toastr["error"]("افزودن محصول مورد نظر انجام نگردید، لطفاً مجدداً تلاش نمایید.", "دیجی استور");</script>}
     }
     @if (TempData["ProductEditStatus"] != null)
     {
         @if ((bool)TempData["ProductEditStatus"] == true)
         {
-            <script>toastr["success"]("ویرایش محصول مورد نظر با موفقیت انجام گردید.", "دیجی مووی");</script>}
+            <script>toastr["info"]("ویرایش محصول مورد نظر با موفقیت انجام گردید.", "دیجی استور");</script>}
         else
         {
-            <script>toastr["error"]("ویرایش محصول مورد نظر انجام نگردید، لطفاً مجدداً تلاش نمایید.", "دیجی مووی");</script>}
+            <script>toastr["error"]("ویرایش محصول مورد نظر انجام نگردید، لطفاً مجدداً تلاش نمایید.", "دیجی استور");</script>}
     }
 }
 
