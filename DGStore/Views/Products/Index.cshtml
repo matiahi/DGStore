@@ -26,39 +26,41 @@ else
 {
     <table class="table">
         <thead>
-            <tr>
-                <th class="text-center">عنوان </th>
-                <th class="text-center">موجود </th>
-                <th class="text-center">تعداد موجودی </th>
-                <th class="text-center">قیمت </th>
-                <th class="text-center">مشخصات </th>
-            </tr>
+			<tr>
+				<th class="text-center">عکس </th>
+				<th class="text-center">عنوان </th>
+				<th class="text-center">موجود </th>
+				<th class="text-center">تعداد موجودی </th>
+				<th class="text-center">قیمت </th>
+				<th class="text-center">مشخصات </th>
+			</tr>
         </thead>
         <tbody>
             @foreach (var product in Model)
             {
-                <tr>
-                    <td>@product.Title</td>
-                    <td>
-                        @if (product.IsExists)
-                        {
-                            <text>بلی</text>
-                        }
-                        else
-                        {
-                            <text>خیر</text>
-                        }
-                    </td>
-                    <td>@product.NumberInStock</td>
-                    <td>@product.Price</td>
-                    <td>@product.Specification</td>
+			<tr>
+				<td><img src="@product.ImagePath" title="سایت دیجی استور - @product.Title" alt="سایت دیجی استور - @product.Title" width="40"/></td>
+				<td>@product.Title</td>
+				<td>
+					@if (product.IsExists)
+		{
+			<text>بلی</text>
+}
+else
+{
+			<text>خیر</text>
+}
+				</td>
+				<td>@product.NumberInStock</td>
+				<td>@product.Price</td>
+				<td>@product.Specification</td>
 
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@product.Id" class="nav-link text-warning">ویرایش</a> |
-                        <a asp-action="Details" asp-route-id="@product.Id" class="nav-link text-primary">جزییات</a> |
-                        <a asp-action="Delete" asp-route-id="@product.Id" class="nav-link text-danger">حذف</a>
-                    </td>
-                </tr>
+				<td>
+					<a asp-action="Edit" asp-route-id="@product.Id" class="nav-link text-warning">ویرایش</a> |
+					<a asp-action="Details" asp-route-id="@product.Id" class="nav-link text-primary">جزییات</a> |
+					<a asp-action="Delete" asp-route-id="@product.Id" class="nav-link text-danger">حذف</a>
+				</td>
+			</tr>
             }
         </tbody>
     </table>

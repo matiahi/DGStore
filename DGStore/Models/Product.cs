@@ -17,6 +17,8 @@ namespace DGStore.Models
         [Required]
         public string Specification { get; set; }
         public int Price { get; set; }
+		[StringLength (150)]
+		public string ImagePath { get; set; }
 
-    }
+	}
 }

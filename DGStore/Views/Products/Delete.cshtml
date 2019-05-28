@@ -9,6 +9,12 @@
 <hr />
 <table class="table">
     <tbody>
+		<tr>
+			<td>
+				<label asp-for="Title" class="control-label">عکس:</label>
+			</td>
+			<td><img src="@Model.ImagePath" title="سایت دیجی استور - @Model.Title" alt="سایت دیجی استور - @Model.Title" width="100px" /></td>
+		</tr>
         <tr>
             <td>
                 <label asp-for="Title" class="control-label">عنوان محصول:</label>

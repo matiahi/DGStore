@@ -7,44 +7,50 @@
 <h2 class="text-right">@ViewData["Title"] </h2>
 <hr />
 <table class="table">
-    <tbody>
-        <tr>
-            <td>
-                <label asp-for="Title" class="control-label">عنوان محصول:</label>
-            </td>
-            <td>@Html.DisplayFor(model => model.Title)</td>
-        </tr>
-        <tr>
-            <td>
-                <label asp-for="IsExists" class="control-label">کالا موجود است :</label>
-            </td>
-            <td>
-                @if (Model.IsExists)
-                {
-                    <text>بلی</text>
-                }
-                else
-                {
-                    <text>خیر</text>
-                }
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label asp-for="NumberInStock" class="control-label">تعداد موجودی:</label>
-            </td>
-            <td>@Html.DisplayFor(model => model.NumberInStock)</td>
-        </tr>
-        <tr>
-            <td> <label asp-for="Price" class="control-label">قیمت:</label> </td>
+	<tbody>
+		<tr>
+			<td>
+				<label asp-for="Title" class="control-label">عکس:</label>
+			</td>
+			<td><img src="@Model.ImagePath" title="سایت دیجی استور - @Model.Title" alt="سایت دیجی استور - @Model.Title" width="100px" /></td>
+		</tr>
+		<tr>
+			<td>
+				<label asp-for="Title" class="control-label">عنوان محصول:</label>
+			</td>
+			<td>@Html.DisplayFor(model => model.Title)</td>
+		</tr>
+		<tr>
+			<td>
+				<label asp-for="IsExists" class="control-label">کالا موجود است :</label>
+			</td>
+			<td>
+				@if (Model.IsExists)
+			{
+				<text>بلی</text>
+		}
+		else
+		{
+			<text>خیر</text>
+	}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label asp-for="NumberInStock" class="control-label">تعداد موجودی:</label>
+			</td>
+			<td>@Html.DisplayFor(model => model.NumberInStock)</td>
+		</tr>
+		<tr>
+			<td> <label asp-for="Price" class="control-label">قیمت:</label> </td>
 
-            <td>@Html.DisplayFor(model => model.Price) </td>
-        </tr>
-        <tr>
-            <td><label asp-for="Specification" class="control-label">توضیحات:</label></td>
-            <td> @Html.DisplayFor(model => model.Specification)</td>
-        </tr>
-    </tbody>
+			<td>@Html.DisplayFor(model => model.Price) </td>
+		</tr>
+		<tr>
+			<td><label asp-for="Specification" class="control-label">توضیحات:</label></td>
+			<td> @Html.DisplayFor(model => model.Specification)</td>
+		</tr>
+	</tbody>
 </table>
 
 <div>
